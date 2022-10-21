@@ -1,5 +1,5 @@
 // Basic Consts
-const SCREEN_L = 850;
+const SCREEN_L = 500;
 const SCREEN_H = 800;
 const A_KEY = 65;
 const D_KEY = 68;
@@ -22,7 +22,7 @@ const PLAT_SPD = 3;
 const CHAR_SPD = 9;
 
 // Drawing Consts
-const PLAT_L = 95;
+const PLAT_L = 80;
 const PLAT_H = 14;
 const PLAT_ROUNDNESS = 6;
 const SPRING_L = 13;
@@ -130,6 +130,8 @@ class Global {
     }
 
     runGame(){
+        console.log(this.score)
+        
         // difficulty ramping up
         if (this.score % 50 == 0 && this.score != this.lastScore){
             if (this.score % 100 == 0){
@@ -147,10 +149,6 @@ class Global {
         this.platManage();
         this.charManage();
         this.verticalMovementManage();
-
-        fill(255, 255, 255)
-        textSize(30);
-        text("Score: " + this.score + " Cloud: " + this.cloudOdds + " Move: " + this.moveOdds, 10, 30);
     }
 
 }
